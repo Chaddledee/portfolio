@@ -1,0 +1,25 @@
+div#content {
+	max-width: 100rem;
+	margin: 0 auto; 
+}
+
+#bg-image {
+	background-image: linear-gradient(to bottom, rgb(50, 50, 50, 0.15) 100px, rgb(50, 50, 50, 0) 150px), 
+	url("../assets/testa.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+  	background-position: center top; 
+	background-color: #000;
+	position: absolute;
+	width:100%;
+	height: 100%;
+	filter: contrast(100%) brightness(80%) grayscale(20%);
+    background-size: 100% auto;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 1280px){
+    #bg-image {
+        background-size: 1280px;
+    }
+}

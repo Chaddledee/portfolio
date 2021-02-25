@@ -1,0 +1,33 @@
+header {
+	background-color: white;
+	color: black;
+	margin: 0 auto;
+	width: 100%;
+	mix-blend-mode: screen;
+}
+
+header>div.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	font-size: 2rem; 
+	font-weight: bold;
+	display:flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	padding: 0.5rem;
+}
+
+@media only screen and (min-width: 420px){
+    header>div.container {
+		flex-flow: row wrap;
+		align-items: center;
+	}
+}
+
+div.container>h1 {
+	font-size: 4rem; 
+}
+div.container>nav {
+	text-align: right;
+	flex-grow: 5;
+}
