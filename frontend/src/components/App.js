@@ -12,6 +12,7 @@ import './App.css';
 
 import Header from './Header/Header.js';
 import Nav from './Nav/Nav.js';
+import About from './About/About.js';
 
 class App extends Component {
   constructor(props) {
@@ -89,10 +90,6 @@ class App extends Component {
 
 function Home() {
   return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
 }
 
 function Projects(props) {
