@@ -5,13 +5,13 @@ body {
 div#content {
 	max-width: 80rem;
 	margin: 0px auto; 
-	padding: 10px; 
+	padding-top: 20px; 
 }
 
 @media only screen and (max-width: 900px){
 
     div#content {
-		padding: 0px;
+		padding: 20px 0px;
 	}
 }
 
@@ -19,7 +19,7 @@ div#content {
 	background-image: linear-gradient(to bottom, rgb(50, 50, 50, 0.15) 100px, rgb(50, 50, 50, 0) 150px), 
 	url("../assets/testa.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100%;
   	background-position: center top; 
 	position: absolute;
 	width:100%;

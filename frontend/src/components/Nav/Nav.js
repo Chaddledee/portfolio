@@ -10,7 +10,7 @@ class Nav extends Component {
       navItems: [
         {'name': 'home',
           'link': '/'},
-        {'name': 'about',
+        {'name': 'about me',
           'link': '/about'},
         {'name': 'projects',
           'link': '/projects'},
@@ -59,6 +59,7 @@ class Nav extends Component {
                       <li
                         key={i}
                         onClick={() => that.clickMenu(item.name)}
+                        className='nav-item'
                       >
                         <Link
                           to={item.link}
