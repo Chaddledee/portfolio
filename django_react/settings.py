@@ -20,11 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-SECRET_KEY=config('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.path.isfile(os.path.join(BASE_DIR, 'venv/.env')):
+    SECRET_KEY=config('SECRET_KEY')
+    DEBUG = False
+else:
+    SECRET_KEY='test'
+    DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.1.130', '127.0.0.1', 'localhost']
 
