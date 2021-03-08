@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,11 +19,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-if os.path.isfile(os.path.join(BASE_DIR, 'venv/.env')):
-    SECRET_KEY=config('SECRET_KEY')
-    DEBUG = False
+if 'PORTFOLIO_SECRET_KEY' in os.environ:
+    SECRET_KEY=os.environ['PORTFOLIO_SECRET_KEY']
 else:
     SECRET_KEY='test'
+
+if 'PORTFOLIO_DEBUG' in os.environ:
+    DEBUG = os.environ['PORTFOLIO_DEBUG']
+else:
     DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.1.130', '127.0.0.1', 'localhost']
@@ -126,5 +128,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
