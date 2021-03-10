@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Timeline from './Timeline/Timeline.js';
 import './About.css';
 
 class About extends Component {
@@ -10,7 +11,10 @@ class About extends Component {
 				</div>
 				<div className='about-text'>
 					<h2>Hi. I'm Charlie!</h2>
-					<p>I'm a developer with several years Python experience under my belt, turning my head towards web development.</p>
+					<p>I'm a developer with several years Python experience under my belt. I have recently turned my focus towards web development.</p>
+					<p>Here's a brief history of my professional experience...</p>
+					<Timeline />
+					<p>Some of the technologies I'm familiar with include...</p>
 				</div>
 				<div className='tech-flex'>
 					<div className='tech-flex-item'>

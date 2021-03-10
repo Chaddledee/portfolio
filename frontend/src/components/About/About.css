@@ -24,20 +24,20 @@
 	background-color: white;
 	padding: 1rem;
 	padding-top: 200px;
-	padding-bottom: 200px;
-	flex-grow:1;
+	padding-bottom: 150px;
 	border-radius: 10px;
   	z-index: 1;
 	text-align: center;
 }
 
-.about-text h2 {
+.about-text>h2 {
 	font-size: 140%;
+	font-weight: bold;
 }
 
-.about-text p {
+.about-text>p {
 	font-size: 120%;
-	margin-top: 2rem;
+	margin: 2rem;
 }
 
 .tech-flex {
