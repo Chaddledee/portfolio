@@ -20,7 +20,7 @@ div#content {
 
 #bg-image {
 	background-image: linear-gradient(to bottom, rgb(50, 50, 50, 0.15) 100px, rgb(50, 50, 50, 0) 150px), 
-	url("../assets/testa.jpg");
+	url("../../assets/background.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
   	background-position: center top; 

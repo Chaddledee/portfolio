@@ -7,7 +7,7 @@ class About extends Component {
 		return (
 			<div className='about'>
 				<div className='portrait-wrapper'>
-					<div className='portrait'></div>
+					<img className='portrait' src="/static/me.jpg" alt="Me, an egg" />
 				</div>
 				<div className='about-text'>
 					<h2>Hi. I'm Charlie!</h2>
