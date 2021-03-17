@@ -9,13 +9,20 @@ class Nav extends Component {
       smallScreen: !window.matchMedia("(min-width:420px)").matches,
       navItems: [
         {'name': 'home',
-          'link': '/'},
+          'link': '/',
+          'static': false },
         {'name': 'about me',
-          'link': '/about'},
+          'link': '/about',
+          'static': false },
         {'name': 'projects',
-          'link': '/projects'},
+          'link': '/projects',
+          'static': false },
         {'name': 'photography',
-          'link': '/photos'}
+          'link': '/photos',
+          'static': false },
+        {'name': 'resume',
+          'link': '/static/CharlieTannerCV.pdf',
+          'static': true }
       ],
       current: 'menu',
       isOpen: false
@@ -55,19 +62,30 @@ class Nav extends Component {
               <ul>
                 {
                   this.state.navItems.map(function(item, i){
-                    return (
-                      <li
-                        key={i}
-                        onClick={() => that.clickMenu(item.name)}
-                        className='nav-item'
-                      >
-                        <Link
-                          to={item.link}
+                    if (!item.static) {
+                      return (
+                        <li
+                          key={i}
+                          onClick={() => that.clickMenu(item.name)}
+                          className='nav-item'
                         >
-                          {item.name}
-                        </Link>
-                      </li>
-                    )
+                          <Link
+                            to={item.link}
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      )
+                    } else {
+                      return (
+                        <li
+                          key={i}
+                          className='nav-item nav-item-static'
+                        >
+                          <a href={item.link}>{item.name}</a>
+                        </li>
+                      )
+                    }
                   })
                 }
               </ul>
@@ -82,13 +100,30 @@ class Nav extends Component {
           <ul>
             { 
               this.state.navItems.map(function(item, i){
-                return (  
-                  <li 
-                    key={i}
-                    onClick={() => that.clickMenu(item.name)}>
-                    <Link to={item.link}>{item.name}</Link>
-                  </li>
-                );
+                if (!item.static) {
+                  return (
+                    <li
+                      key={i}
+                      onClick={() => that.clickMenu(item.name)}
+                      className='nav-item'
+                    >
+                      <Link
+                        to={item.link}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  )
+                } else {
+                  return (
+                    <li
+                      key={i}
+                      className='nav-item nav-item-static'
+                    >
+                      <a href={item.link}>{item.name}</a>
+                    </li>
+                  )
+                }
               }) 
             }
           </ul>
