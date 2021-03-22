@@ -1,0 +1,31 @@
+.gallery-flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.gallery-flex-item {
+	min-width: 320px;
+	max-width: 400px;
+	flex-grow: 1;
+	flex-basis: 0;
+	border-radius: 0.5rem;
+	margin: 1%;
+	background-color: white;
+}
+
+.gallery-flex-inner {
+	display: relative;
+	padding: 1rem;
+	transition: padding 1s ease;
+}
+
+.gallery-flex-inner:hover {
+	padding: 0.65rem 0.5rem;
+}
+
+.gallery-image {
+	width:100%;
+	object-fit: contain;
+}

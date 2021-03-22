@@ -24,6 +24,12 @@ header>div.container {
 	}
 }
 
+@media only screen and (min-width: 900px){
+    header>div.container {
+		width: 90%;
+	}
+}
+
 div.container>h1 {
 	font-size: 4rem; 
 }

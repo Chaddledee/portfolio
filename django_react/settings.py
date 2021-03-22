@@ -28,7 +28,6 @@ if 'PORTFOLIO_DEBUG' in os.environ:
     DEBUG = os.environ['PORTFOLIO_DEBUG']
 else:
     DEBUG = True
-#test
 
 ALLOWED_HOSTS = ['192.168.1.130', '127.0.0.1', 'localhost']
 
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'rest_framework',
+    'photos',
     'frontend'
 ]
 

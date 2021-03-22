@@ -1,0 +1,41 @@
+.albums-flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.albums-flex-album {
+	position: relative;
+	max-width: 600px;
+	min-width: 320px;
+	flex-grow: 1;
+	flex-basis: 0;
+	height: 400px;
+	border-radius: 0.5rem;
+	background: white;
+	overflow: hidden;
+	margin: 1%;
+}
+
+@media only screen and (min-width: 1000px){
+    .albums-flex-album {
+		min-width: 420px;
+	}
+}
+
+.albums-flex-album>img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.albums-flex-album-text {
+	bottom: 0px;
+	position: absolute;
+	background-color: white;
+	width: 100%;
+	padding: 0.5rem;
+	
+	font-weight: bold;
+}

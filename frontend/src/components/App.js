@@ -13,6 +13,8 @@ import './App.css';
 import Header from './Header/Header.js';
 import Nav from './Nav/Nav.js';
 import About from './About/About.js';
+import Photos from './Photos/Photos.js';
+import Album from './Photos/Album/Album.js';
 
 class App extends Component {
   constructor(props) {
@@ -63,18 +65,17 @@ class App extends Component {
         <div>
           <Header updateRotation={this.updateRotation}/>
 
-          {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
           <div id='content'>
             <Switch>
               <Route path="/about">
                 <About />
               </Route>
               <Route path="/projects">
-                <Projects data={this.state.data}/>
+                <Projects/>
               </Route>
+              <Route path="/photos/:album_id"  component={Album} />
               <Route path="/photos">
-                <Photos data={this.state.data}/>
+                <Photos/>
               </Route>
               <Route path="/">
                 <Home />
@@ -94,10 +95,6 @@ function Home() {
 
 function Projects(props) {
   return <h2>Projects</h2>;
-}
-
-function Photos() {
-  return <h2>Photography</h2>
 }
 
 export default App;
