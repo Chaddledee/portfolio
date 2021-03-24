@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from "react-router-dom";
 import './Album.css'
 
 class Album extends Component {
@@ -21,7 +22,7 @@ class Album extends Component {
 			.then(data => {
 				console.log(data)
 				this.setState(() => {
-					return { image_list: data.images };
+					return { image_list: data };
 				})
 			})
 
@@ -32,13 +33,15 @@ class Album extends Component {
 			<div>
 				<div className="gallery-flex-container">
 				{
-					this.state.image_list && this.state.image_list.map((image_url, i) => {
+					this.state.image_list && this.state.image_list.map((image, i) => {
 						return (
-								<div key={i} className="gallery-flex-item">
-									<div className="gallery-flex-inner">
-										<img className="gallery-image" src={image_url} alt="" />	
-									</div>
+							<div key={i} className="gallery-flex-item">
+								<div className="gallery-flex-inner">
+									<Link to={"/photos/" + image.album + '/' + image.id}>
+										<img className="gallery-image" src={image.image} alt={image.name} />
+									</Link>
 								</div>
+							</div>
 						)
 					})
 				}

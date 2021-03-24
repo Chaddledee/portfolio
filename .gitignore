@@ -114,3 +114,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Django database
+db.sqlite3

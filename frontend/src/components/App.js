@@ -15,6 +15,7 @@ import Nav from './Nav/Nav.js';
 import About from './About/About.js';
 import Photos from './Photos/Photos.js';
 import Album from './Photos/Album/Album.js';
+import Photo from './Photos/Photo/Photo.js';
 
 class App extends Component {
   constructor(props) {
@@ -73,6 +74,7 @@ class App extends Component {
               <Route path="/projects">
                 <Projects/>
               </Route>
+              <Route path="/photos/:album_id/:image_id"  component={Photo} />
               <Route path="/photos/:album_id"  component={Album} />
               <Route path="/photos">
                 <Photos/>
@@ -90,11 +92,11 @@ class App extends Component {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h3>Home</h3>;
 }
 
-function Projects(props) {
-  return <h2>Projects</h2>;
+function Projects() {
+  return <h3>Projects</h3>;
 }
 
 export default App;

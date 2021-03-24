@@ -18,7 +18,7 @@
 .gallery-flex-inner {
 	display: relative;
 	padding: 1rem;
-	transition: padding 1s ease;
+	transition: padding 0.5s ease;
 }
 
 .gallery-flex-inner:hover {

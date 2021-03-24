@@ -1,5 +1,5 @@
-from .models import Album
-from .serializers import AlbumSerializer
+from .models import Album, AlbumImage
+from .serializers import AlbumSerializer, AlbumImageSerializer
 from rest_framework import generics
 from django.conf import settings
 from rest_framework.response import Response
@@ -10,12 +10,13 @@ class AlbumListCreate(generics.ListCreateAPIView):
 	queryset = Album.objects.all()
 	serializer_class = AlbumSerializer
 
+class ImageList(generics.ListAPIView):
+	serializer_class = AlbumImageSerializer
 
-class ImageList(APIView):
-	def get(self, request, *args, **kwargs):
-		album_id = kwargs.get('album_id', None)
-		album = Album.objects.get(pk=album_id)
-		path=os.path.join(settings.BASE_DIR, 'statichold', 'photos', album.location)
-		img_list=os.listdir(path)
-		img_urls = ["/static/photos/"+album.location+'/'+filename for filename in img_list]
-		return Response({'images': img_urls})
+	def get_queryset(self):
+		album_id = self.kwargs['album_id']
+		return AlbumImage.objects.filter(album__id=album_id)
+
+class ImageRetrieve(generics.RetrieveAPIView):
+	queryset = AlbumImage.objects.all()
+	serializer_class = AlbumImageSerializer

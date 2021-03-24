@@ -21,7 +21,7 @@ class Nav extends Component {
           'link': '/photos',
           'static': false },
         {'name': 'resume',
-          'link': '/static/CharlieTannerCV.pdf',
+          'link': '/media/CharlieTannerCV.pdf',
           'static': true }
       ],
       current: 'menu',

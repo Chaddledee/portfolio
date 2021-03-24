@@ -9,4 +9,5 @@ urlpatterns = [
     path('about', TemplateView.as_view(template_name='frontend/index.html') ),
     path('photos', TemplateView.as_view(template_name='frontend/index.html') ),
     path('photos/<int:album>', TemplateView.as_view(template_name='frontend/index.html') ),
+    path('photos/<int:album>/<int:image>', TemplateView.as_view(template_name='frontend/index.html') ),
 ]
