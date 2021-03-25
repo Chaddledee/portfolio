@@ -117,3 +117,6 @@ dist
 
 # Django database
 db.sqlite3
+
+# Ignore generated thumbnails
+media/thumbnails/

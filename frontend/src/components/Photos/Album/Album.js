@@ -36,9 +36,9 @@ class Album extends Component {
 					this.state.image_list && this.state.image_list.map((image, i) => {
 						return (
 							<div key={i} className="gallery-flex-item">
-								<div className="gallery-flex-inner">
+								<div className="gallery-image-border">
 									<Link to={"/photos/" + image.album + '/' + image.id}>
-										<img className="gallery-image" src={image.image} alt={image.name} />
+										<img className="gallery-image" src={image.thumbnail} alt={image.name} />
 									</Link>
 								</div>
 							</div>

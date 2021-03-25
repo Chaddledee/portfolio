@@ -2,3 +2,4 @@ django
 djangorestframework
 whitenoise
 Pillow
+django-imagekit
