@@ -34,11 +34,13 @@ class Photos extends Component {
 					this.state.albums && this.state.albums.map((album, i) => {
 						return (
 							<div className="albums-flex-album" key={i}>
-								<img src={'/media/thumbnails/photos/' + album.location + '/' + album.thumbnail} alt="" />
-								<div className="albums-flex-album-text">
-									<h3><Link to={"/photos/" + album.id}>{album.name}</Link></h3>
-									<h5>{album.description}</h5>
-								</div>
+								<Link to={"/photos/" + album.id}>
+									<img src={'/media/thumbnails/photos/' + album.location + '/' + album.thumbnail} alt="" />
+									<div className="albums-flex-album-text">
+										<h3>{album.name}</h3>
+										<h5>{album.description}</h5>
+									</div>
+								</Link>
 							</div>
 						)
 					})
