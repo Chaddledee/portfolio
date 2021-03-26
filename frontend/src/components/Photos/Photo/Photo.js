@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import { Link } from "react-router-dom";
 
-import './Photos.css';
+import './Photo.css';
 
 class Photo extends Component {
 	constructor(props) {
@@ -25,23 +26,30 @@ class Photo extends Component {
 					return { image: data };
 				})
 			})
-
 	}
 
 	render() {
-		if (this.state.image) {
-			return (
-				<div className="photos-photo-container">
-					<img className='photos-photo' src={this.state.image.image} alt={this.state.image.name} />
+		return (
+			<div>
+				<div className='in-page-nav'>
+					<Link to={'/photos/' + this.props.match.params.album_id}>
+						<h4>Return to album</h4>
+					</Link>
 				</div>
-			)
-		} else {
-			return (
-				<div className="photos-photo-container">
-					<h3>Loading...</h3>
+				<div>
+				{
+					this.state.image ?
+					<div className="photos-photo-container">
+						<Link to={this.state.image.album}></Link>
+						<img className='photos-photo' src={this.state.image.image} alt={this.state.image.name} />
+					</div>:
+					<div className="photos-photo-container">
+						<h3>Loading...</h3>
+					</div>
+				}
 				</div>
-			)
-		}
+			</div>
+		)
 	}
 } 
 

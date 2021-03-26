@@ -6,8 +6,8 @@ div#content {
 	width: 100%;
 	max-width: 80rem;
 	margin: 0px auto; 
-	padding-top: 20px;
-	padding-bottom: 20px; 
+	padding-top: 1%;
+	padding-bottom: 1%; 
 	color: #303030;
 }
 
@@ -37,4 +37,16 @@ div#content {
     #bg-image {
         background-size: 1280px;
     }
+}
+
+.in-page-nav {
+	margin: 1% 0%;
+	padding: 1rem;
+	background-color: white;
+}
+
+@media only screen and (min-width: 900px){
+	.in-page-nav {
+		border-radius: 0.5rem;
+	}
 }

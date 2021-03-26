@@ -31,6 +31,9 @@ class Album extends Component {
 	render() {
 		return (
 			<div>
+				<div className="in-page-nav">
+					<Link to='/photos'><h4>Return to album list</h4></Link>
+				</div>
 				<div className="gallery-flex-container">
 				{
 					this.state.image_list && this.state.image_list.map((image, i) => {
